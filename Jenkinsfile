@@ -1,5 +1,4 @@
-node('ec2-agent') {
- pipeline {
+pipeline {
    agent any
    stages {
      stage('Clone') {
@@ -25,4 +24,3 @@ node('ec2-agent') {
      }
    }
  }
-}
