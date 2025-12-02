@@ -1,8 +1,8 @@
 pipeline {
-   agent any
+   agent anyagent { label 'ec2-agent' }
    stages {
      stage('Clone') {
-       steps { git 'https://github.com/BVPallavan/Trend-App.git' }
+	steps {	 git branch: 'main', url: 'https://github.com/BVPallavan/Trend-App.git' }
      }
      stage('Build Docker') {
        steps { sh 'docker build -t trend-app:latest .' }
