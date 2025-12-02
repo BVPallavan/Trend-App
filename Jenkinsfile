@@ -1,5 +1,5 @@
 pipeline {
-   agent anyagent { label 'ec2-agent' }
+   agent { label 'ec2-agent' }
    stages {
      stage('Clone') {
 	steps {	 git branch: 'main', url: 'https://github.com/BVPallavan/Trend-App.git' }
