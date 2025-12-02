@@ -9,11 +9,11 @@ pipeline {
      }
      stage('Push DockerHub') {
        steps {
-         withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+        
            sh 'docker login -u $USER -p $PASS'
            sh 'docker tag trend-app:latest bvpallavan/trend-app:latest'
            sh 'docker push bvpallavan/trend-app:latest'
-         }
+       
        }
      }
      stage('Deploy to EKS') {
